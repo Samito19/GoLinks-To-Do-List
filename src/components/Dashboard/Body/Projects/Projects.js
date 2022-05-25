@@ -13,13 +13,16 @@ import axios from "axios";
 
 const Projects = () => {
   const currentProject = useSelector((state) => state.currentProject);
+  const currentUsername = useSelector((state) => state.currentUsername);
   const dispatch = useDispatch();
   const [projects, setProjects] = useState([]);
   const [newProjectName, setNewProjectName] = useState("");
 
   const { isLoading, error, data } = useQuery("projectsData", () =>
     axios
-      .get("http://192.168.1.148:2000/api/get-projects")
+      .post("http://192.168.1.148:2000/api/get-projects", {
+        current_user: currentUsername
+      })
       .then((res) => res.data)
   );
 
@@ -28,35 +31,39 @@ const Projects = () => {
       setProjects(data?.results);
     }
     console.log(data?.results);
-  }, [currentProject, data?.results]);
+  }, [projects, data?.results]);
 
   const onAddProject = (project_name) => {
     if (project_name !== "") {
       axios
         .post("http://192.168.1.148:2000/api/create-project", {
           project_name: project_name,
+          current_user: currentUsername
         })
         .then((response) => console.log(response));
 
       let new_projects = [...projects];
       new_projects.push(project_name);
       setProjects(new_projects);
-      setNewProjectName('')
+      setNewProjectName("");
     }
   };
 
-  const onDeleteProject = async (project_name) => {
-    await dispatch(changeProject(projects[0]));
-
-    if (projects.length > 1 && project_name != "First project") {
+  const onDeleteProject = (project_name) => {
+    if (projects.length > 1 && project_name != "Default project") {
       axios
         .post("http://192.168.1.148:2000/api/delete-project", {
           project_name: project_name,
+          current_user: currentUsername
         })
         .then((response) => console.log(response));
     }
 
+    let new_projects = [...projects];
+    new_projects.splice(new_projects.indexOf(project_name), 1);
+    setProjects(new_projects);
     window.location.reload(false);
+    
   };
   return (
     <>
@@ -66,28 +73,34 @@ const Projects = () => {
       </div>
       <div className="app-menu-projects">
         {projects.map((project, index) => (
-          <div
-            key={index}
-            className="project-container fade-in"
-            onClick={() => {
-              window.location.reload(false);
-              dispatch(changeProject(project));
-            }}
-          >
-            <img
-              src={IndivProjectIcon}
-              alt="Indiv Project Icon"
-              className="project-icon"
-            />
-            <span>{project}</span>
-            <img
-              src={DeleteIcon}
-              alt="Delete Icon"
-              className="delete-icon-project"
+          <div key={index} className="project-container fade-in">
+            <div
+              className="project-container-title"
               onClick={() => {
+                dispatch(changeProject(project));
+                window.location.reload(false);
+              }}
+            >
+              <img
+                src={IndivProjectIcon}
+                alt="Indiv Project Icon"
+                className="project-icon"
+              />
+              <span>{project}</span>
+            </div>
+            <div
+              className="project-delete-container"
+              onClick={() => {
+                dispatch(changeProject("Default project"));
                 onDeleteProject(project);
               }}
-            />
+            >
+              <img
+                src={DeleteIcon}
+                alt="Delete Icon"
+                className="delete-icon-project"
+              />
+            </div>
           </div>
         ))}
         <div className="plus-project-container">

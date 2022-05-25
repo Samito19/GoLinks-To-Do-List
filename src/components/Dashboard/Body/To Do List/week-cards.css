@@ -15,6 +15,27 @@
   display: none; /* Safari and Chrome */
 }
 
+.app-to-do-list-title {
+  display: flex;
+  width: 100%;
+  height: 10%;
+  margin-top: 7.5%;
+  margin-bottom: -2%;
+  text-align: center;
+  align-items: center;
+}
+
+.app-to-do-list-title h1 {
+  font-size: 3.5vh;
+  padding: 1rem;
+  border-radius: 5px;
+  color: #091e31;
+}
+
+.to-do-list-logo {
+  height: 50%;
+}
+
 .week-card-container {
   display: flex;
   flex-direction: column;
@@ -47,7 +68,7 @@
   margin-top: 5%;
   height: 10%;
   max-height: 2.5rem;
-  width: 80%;
+  width: 85%;
   align-self: center;
   border: 0.5px solid #e5e6e5;
   border-radius: 5px;
@@ -84,27 +105,6 @@
   border: 1.5px solid #00beac;
 }
 
-.app-to-do-list-title {
-  display: flex;
-  width: 100%;
-  height: 10%;
-  margin-top: 7.5%;
-  margin-bottom: -2%;
-  text-align: center;
-  align-items: center;
-}
-
-.app-to-do-list-title h1 {
-  font-size: 3.5vh;
-  padding: 1rem;
-  border-radius: 5px;
-  color: #091e31;
-}
-
-.to-do-list-logo {
-  height: 50%;
-}
-
 .circle-img {
   height: 50%;
   margin-left: 3%;
@@ -125,4 +125,24 @@
   width: 10%;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media only screen and (max-width: 1023px) {
+  .week-card-container {
+    margin: 0 10% 0 7.5%;
+    width: 85%;
+  }
+
+  .app-to-do-list-title {
+    justify-content: center;
+  }
+
+  .app-to-do-list-title h1 {
+    font-size: 3vh;
+  }
+
+  .to-do-list-logo {
+    height: 40%;
+  }
+
 }

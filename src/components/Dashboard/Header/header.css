@@ -8,8 +8,8 @@
   border-bottom: 1.5px solid #e5e6e5;
 }
 
-.header-go-links-logo-img {
-  height: 50%;
+.header-go-links-logo {
+  height: 55%;
   margin-left: 2%;
   cursor: pointer;
 }
@@ -18,7 +18,7 @@
   display: flex;
   margin-left: auto;
   height: 100%;
-  width: 20%;
+  width: 25%;
 
   align-items: center;
   justify-content: center;
@@ -37,4 +37,20 @@
   font-size: 2vh;
   font-weight: 500;
   margin-left: 20%;
+}
+
+
+@media only screen and (max-width: 1023px) {
+  .header-go-links-logo-img {
+    max-height: 45%;
+  }
+
+  .header-container span {
+    display: none;
+  }
+
+  .header-avatar-logo {
+    margin-left: auto;
+    margin-right: 10%;
+  }
 }

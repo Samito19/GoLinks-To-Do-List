@@ -3,7 +3,6 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import lottie from "lottie-web";
 
-import { changeProject } from "../../../../Redux/actions";
 
 import { useDispatch, useSelector } from "react-redux";
 import "./week-cards.css";
@@ -13,12 +12,12 @@ import CircleTask from "../../../../assets/circle.svg";
 import CircleTaskChecked from "../../../../assets/circle-checked.svg";
 import PlusIcon from "../../../../assets/plus-icon.svg";
 import DeleteIcon from "../../../../assets/delete-icon.svg";
-import animationData from "../../../../assets/loading.json";
 
 const WeekCards = () => {
   const [weekTasks, setWeekTasks] = useState([]);
   const [newTaskInput, setTaskNewInput] = useState("");
   const currentProject = useSelector((state) => state.currentProject);
+  const currentUsername = useSelector((state) => state.currentUsername);
   const dispatch = useDispatch();
 
   const loading_logo_container = useRef(null);
@@ -39,6 +38,7 @@ const WeekCards = () => {
     axios
       .post("http://192.168.1.148:2000/api/get-tasks", {
         project_name: currentProject,
+        current_user: currentUsername
       })
       .then((res) => res.data)
   );
@@ -57,6 +57,14 @@ const WeekCards = () => {
         : null
     );
     setWeekTasks(new_week_tasks);
+
+    axios
+        .post("http://192.168.1.148:2000/api/update-tasks", {
+          project_name: currentProject,
+          project_tasks: JSON.stringify(weekTasks),
+          current_user: currentUsername
+        })
+        .then((response) => console.log(response));
   };
 
   const onAddTask = (new_task, day_index) => {
@@ -64,6 +72,14 @@ const WeekCards = () => {
       let new_week_tasks = [...weekTasks];
       new_week_tasks[day_index][1].push(new_task);
       setWeekTasks(new_week_tasks);
+
+      axios
+        .post("http://192.168.1.148:2000/api/update-tasks", {
+          project_name: currentProject,
+          project_tasks: JSON.stringify(weekTasks),
+          current_user: currentUsername
+        })
+        .then((response) => console.log(response));
     }
   };
 
@@ -71,6 +87,14 @@ const WeekCards = () => {
     let new_week_tasks = [...weekTasks];
     new_week_tasks[day_index][1].splice(new_week_tasks.indexOf(new_task), 1);
     setWeekTasks(new_week_tasks);
+
+    axios
+        .post("http://192.168.1.148:2000/api/update-tasks", {
+          project_name: currentProject,
+          project_tasks: JSON.stringify(weekTasks),
+          current_user: currentUsername
+        })
+        .then((response) => console.log(response));
   };
 
   return (
