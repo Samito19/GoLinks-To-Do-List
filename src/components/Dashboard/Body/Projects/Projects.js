@@ -20,7 +20,7 @@ const Projects = () => {
 
   const { isLoading, error, data } = useQuery("projectsData", () =>
     axios
-      .post("http://192.168.1.148:2000/api/get-projects", {
+      .post("http://3.227.181.107:3000/api/get-projects", {
         current_user: currentUsername
       })
       .then((res) => res.data)
@@ -36,7 +36,7 @@ const Projects = () => {
   const onAddProject = (project_name) => {
     if (project_name !== "") {
       axios
-        .post("http://192.168.1.148:2000/api/create-project", {
+        .post("http://3.227.181.107:3000/api/create-project", {
           project_name: project_name,
           current_user: currentUsername
         })
@@ -53,7 +53,7 @@ const Projects = () => {
   const onDeleteProject = (project_name) => {
     if (projects.length > 1 && project_name != "Default project") {
       axios
-        .post("http://192.168.1.148:2000/api/delete-project", {
+        .post("http://3.227.181.107:3000/api/delete-project", {
           project_name: project_name,
           current_user: currentUsername
         })
