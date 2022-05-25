@@ -46,6 +46,7 @@ const Projects = () => {
       new_projects.push(project_name);
       setProjects(new_projects);
       setNewProjectName("");
+      window.location.reload(false);
     }
   };
 
