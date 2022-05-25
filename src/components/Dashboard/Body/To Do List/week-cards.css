@@ -1,0 +1,128 @@
+.week-cards-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  align-items: center;
+  margin: 1% 0;
+
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
+}
+
+.week-cards-container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.week-card-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #feffff;
+  height: 90%;
+  width: 20rem;
+  margin: 0 1%;
+  border-radius: 7px;
+  flex-shrink: 0;
+  overflow: hidden;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.week-card-container span {
+  text-align: center;
+  font-size: large;
+  height: 6%;
+  padding: 1rem;
+  max-height: 1rem;
+  background-color: #00beac;
+  color:#feffff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  font-weight: 700;
+}
+
+.week-card-tasks {
+  display: flex;
+  margin-top: 5%;
+  height: 10%;
+  max-height: 2.5rem;
+  width: 80%;
+  align-self: center;
+  border: 0.5px solid #e5e6e5;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  padding: 0.5%;
+  align-items: center;
+
+}
+
+.delete-icon-task {
+  height: 55%;
+  margin-left: auto;
+  margin-right: 4%;
+  cursor: pointer;
+}
+
+.delete-icon-task:hover {
+  animation-name: shake-bottom;
+  animation-duration: 1s;
+}
+
+.week-card-tasks input{
+  margin-left: -3%;
+  height: 65%;
+  text-indent: 4%;
+  border-radius: 5px;
+  font-size:1.8vh;
+  border: none;
+}
+
+.week-card-tasks input:focus{
+  outline: none;
+  border: 1.5px solid #00beac;
+}
+
+.app-to-do-list-title {
+  display: flex;
+  width: 100%;
+  height: 10%;
+  margin-top: 7.5%;
+  margin-bottom: -2%;
+  text-align: center;
+  align-items: center;
+}
+
+.app-to-do-list-title h1 {
+  font-size: 3.5vh;
+  padding: 1rem;
+  border-radius: 5px;
+  color: #091e31;
+}
+
+.to-do-list-logo {
+  height: 50%;
+}
+
+.circle-img {
+  height: 50%;
+  margin-left: 3%;
+  margin-right: 8%;
+  cursor: pointer;
+}
+
+.plus-icon-img {
+  height: 60%;
+  margin-left: 3%;
+  margin-right: 8%;
+  cursor: pointer;
+}
+
+
+.loading-logo-container {
+  height: 10%;
+  width: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}

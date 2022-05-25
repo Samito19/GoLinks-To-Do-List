@@ -1,0 +1,47 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  background-color: #f0f1f3;
+  overflow: hidden;
+}
+
+.app-header {
+  width: 100%;
+  height: 8%;
+}
+
+.app-body {
+  display: flex;
+  flex-direction: row;
+  height: 90%;
+}
+
+.app-menu-container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 90%;
+  align-items:center;
+  justify-content: center;
+}
+
+
+.app-week-cards-section {
+  width: 100%;
+  height: 70%;
+}
+
+.app-body-title-week-cards {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  height: 100%;
+  margin-left: auto;
+}
+
+.app-footer-rigths {
+  padding: 1%;
+  color: #091e31;
+}

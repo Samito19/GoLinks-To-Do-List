@@ -1,0 +1,40 @@
+.header-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #feffff;
+
+  align-items: center;
+  border-bottom: 1.5px solid #e5e6e5;
+}
+
+.header-go-links-logo-img {
+  height: 50%;
+  margin-left: 2%;
+  cursor: pointer;
+}
+
+.header-profile {
+  display: flex;
+  margin-left: auto;
+  height: 100%;
+  width: 20%;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+.header-avatar-logo {
+  padding: 0 1.5%;
+  height: 5vh;
+  width: 5vh;
+  cursor: pointer;
+  margin-left: 7%;
+}
+
+.header-container span {
+  font-size: 2vh;
+  font-weight: 500;
+  margin-left: 20%;
+}
