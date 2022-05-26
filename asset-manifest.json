@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/GoLinks-To-Do-List/static/css/main.0b35f2ca.css",
+    "main.js": "/GoLinks-To-Do-List/static/js/main.cf8fc326.js",
+    "static/media/login-into-golinks.png": "/GoLinks-To-Do-List/static/media/login-into-golinks.3d22b8251a3c4c02f0ee.png",
+    "static/media/golinks-logo-2021-dark.svg": "/GoLinks-To-Do-List/static/media/golinks-logo-2021-dark.b6fa653c9f54dc17b4f22983956524d6.svg",
+    "static/media/avatar-logo.svg": "/GoLinks-To-Do-List/static/media/avatar-logo.4497a60797e9bcd2d21c9dfb13610c64.svg",
+    "static/media/projects-logo.svg": "/GoLinks-To-Do-List/static/media/projects-logo.c48c8245f0ae8108e4ff565e47a2ab95.svg",
+    "index.html": "/GoLinks-To-Do-List/index.html",
+    "static/media/individual-project-icon.svg": "/GoLinks-To-Do-List/static/media/individual-project-icon.e3c8f9497ffe51cb91fd1be52437fc82.svg",
+    "static/media/github.svg": "/GoLinks-To-Do-List/static/media/github.7c2b277031fc9aeb24c033ff9332c319.svg",
+    "static/media/circle-checked.svg": "/GoLinks-To-Do-List/static/media/circle-checked.c38b2cb660c4ad95ef5cf769a4bd1c0d.svg",
+    "static/media/delete-icon.svg": "/GoLinks-To-Do-List/static/media/delete-icon.2a19b1318e591a788498b36600571b71.svg",
+    "static/media/to-do-list.svg": "/GoLinks-To-Do-List/static/media/to-do-list.c352713be0f7e5c18a5888ed6760d486.svg",
+    "static/media/plus-icon.svg": "/GoLinks-To-Do-List/static/media/plus-icon.07f5752602440da952c6c392133f92b1.svg",
+    "static/media/circle.svg": "/GoLinks-To-Do-List/static/media/circle.42020c04b8d6997fa1d48d125dfa11fe.svg",
+    "static/media/linkedin.svg": "/GoLinks-To-Do-List/static/media/linkedin.cbf3eac958ddc5dcb0f7d9f741becd11.svg",
+    "main.0b35f2ca.css.map": "/GoLinks-To-Do-List/static/css/main.0b35f2ca.css.map",
+    "main.cf8fc326.js.map": "/GoLinks-To-Do-List/static/js/main.cf8fc326.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0b35f2ca.css",
+    "static/js/main.cf8fc326.js"
+  ]
+}
