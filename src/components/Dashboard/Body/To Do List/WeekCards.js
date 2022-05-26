@@ -36,7 +36,7 @@ const WeekCards = () => {
 
   const { isLoading, error, data } = useQuery("tasksData", () =>
     axios
-      .post("https://3.227.181.107:3000/api/get-tasks", {
+      .post("https://samiamsaf.com/api/get-tasks", {
         project_name: currentProject,
         current_user: currentUsername
       })
@@ -59,7 +59,7 @@ const WeekCards = () => {
     setWeekTasks(new_week_tasks);
 
     axios
-        .post("https://3.227.181.107:3000/api/update-tasks", {
+        .post("https://samiamsaf.com/api/update-tasks", {
           project_name: currentProject,
           project_tasks: JSON.stringify(weekTasks),
           current_user: currentUsername
@@ -74,7 +74,7 @@ const WeekCards = () => {
       setWeekTasks(new_week_tasks);
 
       axios
-        .post("https://3.227.181.107:3000/api/update-tasks", {
+        .post("https://samiamsaf.com/api/update-tasks", {
           project_name: currentProject,
           project_tasks: JSON.stringify(weekTasks),
           current_user: currentUsername
@@ -89,7 +89,7 @@ const WeekCards = () => {
     setWeekTasks(new_week_tasks);
 
     axios
-        .post("https://3.227.181.107:3000/api/update-tasks", {
+        .post("https://samiamsaf.com/api/update-tasks", {
           project_name: currentProject,
           project_tasks: JSON.stringify(weekTasks),
           current_user: currentUsername
