@@ -27,7 +27,7 @@ const Login = () => {
     }
     let data;
     axios
-      .post("http://3.227.181.107:3000/api/create-user", {
+      .post("https://3.227.181.107:3000/api/create-user", {
         current_user: currentUsername,
       })
       .then((res) => (data = res.data));
